@@ -40,10 +40,10 @@ export default function Navbar() {
               <span className="block font-sanskrit text-[10px] uppercase tracking-[0.28em] text-gold/80">
                 {site.brandLine}
               </span>
-              <span className="block font-display text-base font-semibold text-ivory sm:text-lg">
+              <span className="block font-display text-base font-bold text-ivory sm:text-lg">
                 {site.shortName} 
               </span>
-              <span className="text-gold/70">Jyothisha Madom</span>
+              <span className="text-gold/70 font-bold">Jyothisha Madom</span>
             </span>
           </a>
 

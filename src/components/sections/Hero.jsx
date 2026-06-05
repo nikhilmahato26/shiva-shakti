@@ -86,9 +86,9 @@ export default function Hero() {
             {/* Brand line */}
             <motion.p
               variants={item}
-              className="mb-4 font-sanskrit text-sm uppercase tracking-[0.35em] text-ivory/60"
+              className="mb-4 font-sanskrit text-md uppercase tracking-[0.35em] text-ivory/60"
             >
-              {site.brandLine} {site.name}
+              {site.brandLine} <span className="text-gold font-bold">{site.name}</span>
             </motion.p>
 
             {/* Heading */}
