@@ -4,6 +4,7 @@ import { Menu, Phone, FaWhatsapp } from '../../utils/icons';
 import { navLinks, site, telLink, whatsappLink, primaryPhoneDigits } from '../../data/site';
 import Button from '../ui/Button';
 import MobileMenu from './MobileMenu';
+import logoImg from '../../assets/images/logo.png';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,9 +32,9 @@ export default function Navbar() {
         <div className="container-luxe flex items-center justify-between">
           {/* Brand */}
           <a href="#home" className="group flex items-center gap-3">
-            <span className="relative flex h-11 w-11 items-center justify-center rounded-full border border-gold/40 bg-gold/[0.08] transition-all duration-500 group-hover:shadow-glow">
-              <span className="font-sanskrit text-lg text-gold-gradient">ॐ</span>
-              <span className="absolute inset-0 rounded-full border border-gold/20 animate-spin-slower" />
+            <span className="relative flex h-20 w-20 items-center justify-center rounded-full  p-1.5 transition-all duration-500 ">
+              <img src={logoImg} alt={`${site.name} logo`} className="h-full w-full object-contain" />
+              <span className="absolute inset-0 rounded-full animate-spin-slower" />
             </span>
             <span className="leading-tight">
               <span className="block font-sanskrit text-[10px] uppercase tracking-[0.28em] text-gold/80">

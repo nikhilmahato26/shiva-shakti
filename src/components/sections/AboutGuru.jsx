@@ -5,6 +5,7 @@ import Mandala from '../ui/Mandala';
 import { fadeUp, viewport, stagger } from '../../utils/motion';
 import { useCountUp } from '../../hooks/useCountUp';
 import { stats } from '../../data/content';
+import drMaheshImg from '../../assets/images/dr-mahesh.png';
 
 const expertiseTags = [
   'Vedic Astrology',
@@ -50,30 +51,20 @@ export default function AboutGuru() {
           >
             <Mandala className="pointer-events-none absolute -inset-6 -z-10 animate-spin-slower opacity-20" />
             <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-gold/30 bg-gradient-to-b from-cosmic-700 to-cosmic-950 shadow-glow-lg">
-              {/*
-                Drop the Acharya's portrait at src/assets/images/acharya.jpg,
-                import it, and replace this placeholder block with:
-                <img src={acharyaImg} alt="Dr. Uma Mahesh N Acharya" className="h-full w-full object-cover" />
-              */}
-              <div className="flex h-full w-full flex-col items-center justify-center gap-4 p-8 text-center">
-                <span className="flex h-24 w-24 items-center justify-center rounded-full border border-gold/40 bg-gold/[0.08]">
-                  <span className="font-sanskrit text-5xl text-gold-gradient">ॐ</span>
-                </span>
-                <p className="font-display text-2xl font-semibold text-ivory">
-                  Dr. Uma Mahesh N Acharya
-                </p>
-                <p className="text-xs uppercase tracking-[0.25em] text-gold/80">
-                  Portrait Placeholder
-                </p>
-              </div>
-              <div className="pointer-events-none absolute inset-0 bg-cosmic-veil opacity-60" />
+              <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-gold/20 via-cosmic-800/50 to-transparent" />
+              <img
+                src={drMaheshImg}
+                alt="Dr. Uma Mahesh N Acharya"
+                className="relative z-10 h-full w-full object-contain object-bottom pt-8"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-cosmic-950/70 via-transparent to-transparent" />
             </div>
 
             {/* Floating credential badge */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-              className="glass-gold absolute -bottom-6 -right-4 flex items-center gap-3 rounded-2xl px-5 py-4 sm:-right-8"
+              className="glass-gold absolute -bottom-6 -right-4 flex items-center gap-3 rounded-2xl px-5 py-4 sm:-right-8 z-50"
             >
               <Icon name="Award" className="h-8 w-8 text-gold" />
               <div className="leading-tight">

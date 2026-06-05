@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import {
   Phone,
   FaWhatsapp,
+  FaYoutube,
   CalendarDays,
   CheckCircle2,
   ChevronDown,
@@ -10,6 +11,7 @@ import Button from '../ui/Button';
 import SacredBackdrop from '../ui/SacredBackdrop';
 import { site, telLink, whatsappLink, primaryPhoneDigits } from '../../data/site';
 import { trustIndicators } from '../../data/content';
+import logoImg from '../../assets/images/logo.png';
 
 const container = {
   hidden: {},
@@ -40,9 +42,9 @@ export default function Hero() {
           {/* Badge */}
           <motion.div
             variants={item}
-            className="glass-gold mb-8 inline-flex items-center gap-2 rounded-full px-5 py-2 text-xs font-medium uppercase tracking-[0.2em] text-gold"
+            className="glass-gold mb-8 inline-flex items-center gap-3 rounded-full px-5 py-2 text-xs font-medium uppercase tracking-[0.2em] text-gold"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse-glow" />
+            <img src={logoImg} alt="" aria-hidden="true" className="h-8 w-8 object-contain" />
             25+ Years Experience
           </motion.div>
 
@@ -70,6 +72,24 @@ export default function Hero() {
           >
             Vedic Astrology • Numerology • Vastu • Spiritual Healing • Poojas &amp; Homas
           </motion.p>
+
+          <motion.div
+            variants={item}
+            className="mt-5 flex flex-col items-center justify-center gap-3 text-sm text-ivory/65 sm:flex-row sm:flex-wrap"
+          >
+            <a
+              href={site.youtubeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2 text-ivory/80 transition hover:border-gold/50 hover:text-gold"
+            >
+              <FaYoutube className="h-4 w-4 text-gold" />
+              YouTube {site.youtubeHandle}
+            </a>
+            <span className="max-w-xl">
+              Astrology services are communicated in {site.serviceLanguages.join(', ')}.
+            </span>
+          </motion.div>
 
           {/* CTAs */}
           <motion.div

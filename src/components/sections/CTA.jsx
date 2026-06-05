@@ -4,6 +4,7 @@ import Mandala from '../ui/Mandala';
 import { fadeUp, viewport } from '../../utils/motion';
 import { CalendarDays, FaWhatsapp, Phone } from '../../utils/icons';
 import { whatsappLink, telLink, primaryPhoneDigits } from '../../data/site';
+import logoImg from '../../assets/images/logo.png';
 
 export default function CTA() {
   return (
@@ -20,7 +21,12 @@ export default function CTA() {
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/10 blur-[120px]" />
 
         <div className="relative mx-auto max-w-2xl">
-          <span className="font-sanskrit text-4xl text-gold-gradient">ॐ</span>
+          <img
+            src={logoImg}
+            alt=""
+            aria-hidden="true"
+            className="mx-auto h-20 w-20 object-contain drop-shadow-[0_0_22px_rgba(218,178,92,0.25)]"
+          />
           <h2 className="mt-5 font-display text-3xl font-semibold leading-tight text-ivory sm:text-5xl text-balance">
             Your Destiny Awaits Its Awakening
           </h2>

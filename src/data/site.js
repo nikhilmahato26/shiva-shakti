@@ -14,6 +14,9 @@ export const site = {
   },
   phones: ['+91 8858354438', '+91 8921454439'],
   emails: ['umediavirtual@gmail.com', 'maheie99@gmail.com'],
+  youtubeHandle: '@UMediaAstro',
+  youtubeUrl: 'https://www.youtube.com/@UMediaAstro',
+  serviceLanguages: ['English', 'Tamil', 'Malayalam'],
 };
 
 // Primary phone digits (no spaces) for tel: and wa.me links
@@ -44,5 +47,5 @@ export const socials = [
   { label: 'WhatsApp', href: whatsappLink(), icon: 'FaWhatsapp' },
   { label: 'Instagram', href: '#', icon: 'FaInstagram' },
   { label: 'Facebook', href: '#', icon: 'FaFacebookF' },
-  { label: 'YouTube', href: '#', icon: 'FaYoutube' },
+  { label: 'YouTube', href: site.youtubeUrl, icon: 'FaYoutube' },
 ];

@@ -15,8 +15,10 @@ import {
   whatsappLink,
   primaryPhoneDigits,
   secondaryPhoneDigits,
+  socials,
 } from '../../data/site';
 import Mandala from '../ui/Mandala';
+import logoImg from '../../assets/images/logo.png';
 
 const socialIcons = {
   WhatsApp: FaWhatsapp,
@@ -35,8 +37,8 @@ export default function Footer() {
         {/* Brand */}
         <div className="lg:col-span-1">
           <div className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-full border border-gold/40 bg-gold/[0.08]">
-              <span className="font-sanskrit text-lg text-gold-gradient">ॐ</span>
+            <span className="flex h-16 w-16 items-center justify-center rounded-full  p-1.5">
+              <img src={logoImg} alt={`${site.name} logo`} className="h-full w-full object-contain" />
             </span>
             <div className="leading-tight">
               <p className="font-sanskrit text-[10px] uppercase tracking-[0.25em] text-gold/80">
@@ -51,10 +53,12 @@ export default function Footer() {
             {site.tagline}
           </p>
           <div className="mt-6 flex gap-3">
-            {Object.entries(socialIcons).map(([label, IconCmp]) => (
+            {socials.map(({ label, href }) => {
+              const IconCmp = socialIcons[label];
+              return (
               <a
                 key={label}
-                href={label === 'WhatsApp' ? whatsappLink() : '#'}
+                href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
@@ -62,7 +66,8 @@ export default function Footer() {
               >
                 <IconCmp className="h-4 w-4" />
               </a>
-            ))}
+              );
+            })}
           </div>
         </div>
 

@@ -3,6 +3,7 @@ import { X, Phone, FaWhatsapp } from '../../utils/icons';
 import { navLinks, site, telLink, whatsappLink, primaryPhoneDigits } from '../../data/site';
 import Button from '../ui/Button';
 import Mandala from '../ui/Mandala';
+import logoImg from '../../assets/images/logo.png';
 
 export default function MobileMenu({ open, onClose }) {
   return (
@@ -26,13 +27,18 @@ export default function MobileMenu({ open, onClose }) {
             <Mandala className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 animate-spin-slower opacity-10" />
 
             <div className="flex items-center justify-between">
-              <div className="leading-tight">
-                <p className="font-sanskrit text-xs uppercase tracking-[0.25em] text-gold/80">
-                  {site.brandLine}
-                </p>
-                <p className="font-display text-lg font-semibold text-ivory">
-                  {site.shortName}
-                </p>
+              <div className="flex items-center gap-3">
+                <span className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/40 bg-cosmic-950/70 p-1.5">
+                  <img src={logoImg} alt={`${site.name} logo`} className="h-full w-full object-contain" />
+                </span>
+                <div className="leading-tight">
+                  <p className="font-sanskrit text-xs uppercase tracking-[0.25em] text-gold/80">
+                    {site.brandLine}
+                  </p>
+                  <p className="font-display text-lg font-semibold text-ivory">
+                    {site.shortName}
+                  </p>
+                </div>
               </div>
               <button
                 onClick={onClose}
