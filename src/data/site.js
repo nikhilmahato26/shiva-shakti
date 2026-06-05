@@ -38,6 +38,7 @@ export const navLinks = [
   { label: 'Services', href: '#services' },
   { label: 'Poojas', href: '#poojas' },
   { label: 'Yantras', href: '#yantras' },
+  { label: 'Gallery', href: '#gallery' },
   { label: 'Awards', href: '#awards' },
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'Contact', href: '#contact' },
