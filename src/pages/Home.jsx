@@ -8,6 +8,7 @@ import Awards from '../components/sections/Awards';
 import WhyChooseUs from '../components/sections/WhyChooseUs';
 import OnlineConsultation from '../components/sections/OnlineConsultation';
 import Testimonials from '../components/sections/Testimonials';
+import Gallery from '../components/sections/Gallery';
 import FAQ from '../components/sections/FAQ';
 import Contact from '../components/sections/Contact';
 import CTA from '../components/sections/CTA';
@@ -25,6 +26,7 @@ export default function Home() {
       <WhyChooseUs />
       <OnlineConsultation />
       <Testimonials />
+      <Gallery />
       <FAQ />
       <Contact />
       <CTA />

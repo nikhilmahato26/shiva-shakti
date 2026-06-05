@@ -32,7 +32,7 @@ export default function Navbar() {
         <div className="container-luxe flex items-center justify-between">
           {/* Brand */}
           <a href="#home" className="group flex items-center gap-3">
-            <span className="relative flex h-20 w-20 items-center justify-center rounded-full  p-1.5 transition-all duration-500 ">
+            <span className="relative flex h-20 w-20 items-center justify-center rounded-full  p-1 transition-all duration-500 ">
               <img src={logoImg} alt={`${site.name} logo`} className="h-full w-full object-contain" />
               <span className="absolute inset-0 rounded-full animate-spin-slower" />
             </span>
@@ -41,8 +41,9 @@ export default function Navbar() {
                 {site.brandLine}
               </span>
               <span className="block font-display text-base font-semibold text-ivory sm:text-lg">
-                {site.shortName} <span className="text-gold/70">Jyothisha Madom</span>
+                {site.shortName} 
               </span>
+              <span className="text-gold/70">Jyothisha Madom</span>
             </span>
           </a>
 
