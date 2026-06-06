@@ -1,39 +1,66 @@
-// Testimonials — luxury cards. Names are representative initials for privacy.
 export const testimonials = [
   {
     quote:
-      'His reading of my business chart was uncannily precise. The timing he suggested for our expansion turned out to be the best decision we ever made.',
-    name: 'R. Menon',
-    role: 'Business Owner',
-    location: 'Kochi',
+      'I am incredibly grateful for my session with Dr. Uma Mahesh N Acharya. Walking into the reading, I felt overwhelmed, but the deep insights and compassionate delivery provided me with an immense sense of clarity and peace.',
+    name: 'Dhanya',
+    role: 'Personal Consultation',
+    location: 'Dubai',
   },
   {
     quote:
-      'I consulted Acharya during a difficult phase in public life. His guidance was discreet, grounded and remarkably accurate. I trust him completely.',
-    name: 'A Public Representative',
-    role: 'Politician',
-    location: 'Kerala',
+      'Accurate, empowering and deeply healing. Guruji has a profound gift for uncovering the deeper truth in a birth chart. The reading answered questions I have been carrying for years and gave me a beautiful roadmap for the future.',
+    name: 'Vishnu Sankar',
+    role: 'Astrology Reading',
+    location: 'Alleppey',
   },
   {
     quote:
-      'Even from abroad, the online consultation felt deeply personal. The remedies he recommended brought a calm to our household we had been missing for years.',
-    name: 'S. Nair',
-    role: 'NRI Client',
-    location: 'Dubai, UAE',
+      'Working with Dr. Uma Mahesh N Acharya has been an absolute game changer. The analysis of my transits and career houses was incredibly precise, giving me the validation and confidence I needed to make a major pivot.',
+    name: 'Suku Nair',
+    role: 'Career Consultation',
+    location: 'Washington, USA',
   },
   {
     quote:
-      'We approached him for our family concerns. His patience and the clarity of his guidance helped us heal and move forward together.',
-    name: 'The Pillai Family',
-    role: 'Family Consultation',
-    location: 'Ernakulam',
+      'As you predicted, my marriage happened on the said month. I am grateful to you, Panditji.',
+    name: 'Shilpa Arora',
+    role: 'Marriage Prediction',
+    location: 'Mumbai',
   },
   {
     quote:
-      'The horoscope matching before our wedding gave both families complete peace of mind. A year into marriage, we are grateful for his blessings.',
-    name: 'V. & K.',
-    role: 'Marriage Guidance',
-    location: 'Thrissur',
+      'Was shocked to hear your predictions regarding my life — it was crystal clear. As you said, we reunited. Now things are very peaceful and we are happy, Guruji.',
+    name: 'Arvind Shah',
+    role: 'Relationship Guidance',
+    location: 'Gujarat',
+  },
+  {
+    quote:
+      'Your predictions were 100% accurate. The Poojas and Homas you performed for us showed positive results.',
+    name: 'Sanjay Kumar & Family',
+    role: 'Pooja & Homa',
+    location: 'Indore',
+  },
+  {
+    quote:
+      'Your predictions were like God\'s words. The movie I produced went well and was profitable. Thank you so much for your guidance.',
+    name: 'Prakash',
+    role: 'Business Guidance',
+    location: 'Chennai',
+  },
+  {
+    quote:
+      'Excellent and brilliant advice. Your predictions were correct — I was promoted as the CEO of my company. Thanks, Gurujee.',
+    name: 'Rajesh Ranganathan',
+    role: 'Career Prediction',
+    location: 'Qatar',
+  },
+  {
+    quote:
+      'Your reading was perfect and your guidance was divine. We bought a flat. Thank you.',
+    name: 'Valsala Ganesh',
+    role: 'Property Guidance',
+    location: 'Hyderabad',
   },
 ];
 

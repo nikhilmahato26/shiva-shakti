@@ -44,12 +44,12 @@ export default function Footer() {
               <p className="font-sanskrit text-[10px] uppercase tracking-[0.25em] text-gold/80">
                 {site.brandLine}
               </p>
-              <p className="font-display text-lg font-semibold text-ivory">
+              <p className="font-display text-lg font-semibold text-amber-100">
                 {site.shortName}
               </p>
             </div>
           </div>
-          <p className="mt-5 text-sm leading-relaxed text-ivory/55">
+          <p className="mt-5 text-sm leading-relaxed text-amber-100/55">
             {site.tagline}
           </p>
           <div className="mt-6 flex gap-3">
@@ -62,7 +62,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-ivory/70 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:text-gold hover:shadow-glow"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-amber-100/70 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:text-gold hover:shadow-glow"
               >
                 <IconCmp className="h-4 w-4" />
               </a>
@@ -73,14 +73,14 @@ export default function Footer() {
 
         {/* Quick links */}
         <div>
-          <h4 className="font-display text-lg font-semibold text-ivory">Explore</h4>
+          <h4 className="font-display text-lg font-semibold text-amber-100">Explore</h4>
           <span className="mt-3 block h-px w-10 bg-gold/50" />
           <ul className="mt-5 space-y-3">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-sm text-ivory/60 transition hover:text-gold"
+                  className="text-sm text-amber-100/60 transition hover:text-gold"
                 >
                   {link.label}
                 </a>
@@ -91,9 +91,9 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className="font-display text-lg font-semibold text-ivory">Contact</h4>
+          <h4 className="font-display text-lg font-semibold text-amber-100">Contact</h4>
           <span className="mt-3 block h-px w-10 bg-gold/50" />
-          <ul className="mt-5 space-y-4 text-sm text-ivory/60">
+          <ul className="mt-5 space-y-4 text-sm text-amber-100/60">
             <li className="flex items-start gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
               <span>
@@ -107,10 +107,10 @@ export default function Footer() {
             <li className="flex items-start gap-3">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
               <span className="flex flex-col">
-                <a href={telLink(primaryPhoneDigits)} className="transition hover:text-gold">
+                <a href={telLink(primaryPhoneDigits)} className="transition hover:text-gold text-amber-100/60">
                   {site.phones[0]}
                 </a>
-                <a href={telLink(secondaryPhoneDigits)} className="transition hover:text-gold">
+                <a href={telLink(secondaryPhoneDigits)} className="transition hover:text-gold text-amber-100/60">
                   {site.phones[1]}
                 </a>
               </span>
@@ -119,7 +119,7 @@ export default function Footer() {
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
               <span className="flex flex-col">
                 {site.emails.map((e) => (
-                  <a key={e} href={mailLink(e)} className="transition hover:text-gold">
+                  <a key={e} href={mailLink(e)} className="transition hover:text-gold text-amber-100/60">
                     {e}
                   </a>
                 ))}
@@ -130,9 +130,9 @@ export default function Footer() {
 
         {/* Consultation hours / note */}
         <div>
-          <h4 className="font-display text-lg font-semibold text-ivory">Consultations</h4>
+          <h4 className="font-display text-lg font-semibold text-amber-100">Consultations</h4>
           <span className="mt-3 block h-px w-10 bg-gold/50" />
-          <p className="mt-5 text-sm leading-relaxed text-ivory/55">
+          <p className="mt-5 text-sm leading-relaxed text-amber-100/55">
             Available in-person at Kochi and online worldwide via WhatsApp, Video,
             Zoom and Google Meet.
           </p>
@@ -150,10 +150,10 @@ export default function Footer() {
 
       <div className="container-luxe relative border-t border-white/10 py-6">
         <div className="flex flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
-          <p className="text-xs text-ivory/45">
+          <p className="text-xs text-amber-100/45">
             © {new Date().getFullYear()} {site.brandLine} {site.name}. All rights reserved.
           </p>
-          <p className="text-xs text-ivory/35">
+          <p className="text-xs text-amber-100/35">
             Ancient Wisdom · Divine Guidance · Modern Solutions
           </p>
         </div>

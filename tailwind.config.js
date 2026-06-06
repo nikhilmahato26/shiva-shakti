@@ -5,18 +5,18 @@ export default {
     extend: {
       colors: {
         cosmic: {
-          DEFAULT: '#0F172A',
-          50: '#f0f3f9',
-          100: '#dae0ee',
-          200: '#b3c0dd',
-          300: '#8094c2',
-          400: '#4d63a0',
-          500: '#2e3f6e',
-          600: '#1e2a4d',
-          700: '#16203b',
-          800: '#101830',
-          900: '#0F172A',
-          950: '#080d1a',
+          DEFAULT: '#FEF3C7',
+          50: '#5C2D0A',
+          100: '#7C4010',
+          200: '#A06020',
+          300: '#C08030',
+          400: '#D0A040',
+          500: '#DDBA50',
+          600: '#ECD070',
+          700: '#F5E09A',
+          800: '#FAEABC',
+          900: '#FEF3C7',
+          950: '#3D1A00',
         },
         gold: {
           DEFAULT: '#D4AF37',
@@ -33,8 +33,8 @@ export default {
           950: '#392910',
         },
         ivory: {
-          DEFAULT: '#F8F4EC',
-          dark: '#ECE4D4',
+          DEFAULT: '#2D1500',
+          dark: '#1A0800',
         },
       },
       fontFamily: {
@@ -46,13 +46,13 @@ export default {
       backgroundImage: {
         'gold-gradient': 'linear-gradient(135deg, #F4D98B 0%, #D4AF37 45%, #A67C13 100%)',
         'gold-shine': 'linear-gradient(110deg, #A67C13 0%, #D4AF37 25%, #F8E8C0 50%, #D4AF37 75%, #A67C13 100%)',
-        'cosmic-radial': 'radial-gradient(ellipse at top, #1e2a4d 0%, #0F172A 55%, #080d1a 100%)',
-        'cosmic-veil': 'linear-gradient(180deg, rgba(15,23,42,0) 0%, rgba(15,23,42,0.85) 70%, #0F172A 100%)',
+        'cosmic-radial': 'radial-gradient(ellipse at top, #FAEABC 0%, #FEF3C7 55%, #FFF8E8 100%)',
+        'cosmic-veil': 'linear-gradient(180deg, rgba(254,243,199,0) 0%, rgba(254,243,199,0.88) 70%, #FEF3C7 100%)',
       },
       boxShadow: {
         glow: '0 0 40px -8px rgba(212,175,55,0.45)',
         'glow-lg': '0 0 80px -10px rgba(212,175,55,0.4)',
-        'glass': '0 8px 32px 0 rgba(8,13,26,0.45)',
+        'glass': '0 8px 32px 0 rgba(61,26,0,0.12)',
         'gold-inset': 'inset 0 1px 0 0 rgba(244,217,139,0.35)',
       },
       backdropBlur: {

@@ -26,7 +26,7 @@ const modes = [
 ];
 
 const fieldBase =
-  'w-full rounded-xl border border-white/12 bg-white/[0.04] px-4 py-3 text-ivory placeholder:text-ivory/35 outline-none transition focus:border-gold/50 focus:bg-white/[0.06] focus:ring-1 focus:ring-gold/30';
+  'w-full rounded-xl border border-ivory/30 bg-ivory/[0.07] px-4 py-3 text-ivory placeholder:text-ivory/40 outline-none transition focus:border-gold/60 focus:bg-ivory/[0.12] focus:ring-1 focus:ring-gold/30';
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -120,7 +120,7 @@ export default function Contact() {
                     <label className="mb-1.5 block text-sm text-ivory/70">
                       Date of Birth
                     </label>
-                    <input type="date" className={`${fieldBase} [color-scheme:dark]`} {...register('dob')} />
+                    <input type="date" className={`${fieldBase} [color-scheme:light]`} {...register('dob')} />
                   </div>
 
                   <div>
