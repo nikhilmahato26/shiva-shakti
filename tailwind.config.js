@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         cosmic: {
-          DEFAULT: '#FEF3C7',
+          DEFAULT: '#FDE68A',
           50: '#5C2D0A',
           100: '#7C4010',
           200: '#A06020',
@@ -13,13 +13,13 @@ export default {
           400: '#D0A040',
           500: '#DDBA50',
           600: '#ECD070',
-          700: '#F5E09A',
-          800: '#FAEABC',
-          900: '#FEF3C7',
+          700: '#FAC12E',
+          800: '#FCD56C',
+          900: '#FDE68A',
           950: '#3D1A00',
         },
         gold: {
-          DEFAULT: '#D4AF37',
+          DEFAULT: '#7A5500',
           50: '#fbf8ed',
           100: '#f6efcf',
           200: '#eeda9b',
@@ -44,10 +44,10 @@ export default {
         sanskrit: ['"Marcellus"', 'serif'],
       },
       backgroundImage: {
-        'gold-gradient': 'linear-gradient(135deg, #F4D98B 0%, #D4AF37 45%, #A67C13 100%)',
-        'gold-shine': 'linear-gradient(110deg, #A67C13 0%, #D4AF37 25%, #F8E8C0 50%, #D4AF37 75%, #A67C13 100%)',
-        'cosmic-radial': 'radial-gradient(ellipse at top, #FAEABC 0%, #FEF3C7 55%, #FFF8E8 100%)',
-        'cosmic-veil': 'linear-gradient(180deg, rgba(254,243,199,0) 0%, rgba(254,243,199,0.88) 70%, #FEF3C7 100%)',
+        'gold-gradient': 'linear-gradient(135deg, #A67C13 0%, #7A5500 45%, #4A3000 100%)',
+        'gold-shine': 'linear-gradient(110deg, #3D2000 0%, #7A5500 25%, #A67C13 50%, #7A5500 75%, #3D2000 100%)',
+        'cosmic-radial': 'radial-gradient(ellipse at top, #FCD56C 0%, #FDE68A 55%, #FEF3C7 100%)',
+        'cosmic-veil': 'linear-gradient(180deg, rgba(253,230,138,0) 0%, rgba(253,230,138,0.88) 70%, #FDE68A 100%)',
       },
       boxShadow: {
         glow: '0 0 40px -8px rgba(212,175,55,0.45)',
