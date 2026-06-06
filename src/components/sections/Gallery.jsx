@@ -164,7 +164,7 @@ export default function Gallery() {
           className="mb-14 text-center"
         >
           <p className="mb-3 font-sanskrit text-xs uppercase tracking-[0.35em] text-gold/70">
-            Our Media
+            U Media's
           </p>
           <h2 className="font-display text-4xl font-semibold text-ivory sm:text-5xl">
             Shiva Shakthi
