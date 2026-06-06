@@ -9,7 +9,6 @@ import drMaheshImg from '../../assets/images/dr-mahesh.png';
 
 const expertiseTags = [
   'Vedic Astrology',
-  'Evolutionary Astrology',
   'Numerology',
   'Vastu',
   'Spiritual Healing',

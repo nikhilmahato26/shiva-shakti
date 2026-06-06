@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { Play, Pause, Volume2, VolumeX } from '../../utils/icons';
 import SacredBackdrop from '../ui/SacredBackdrop';
 
@@ -24,38 +24,73 @@ const mediaItems = [
     src: 'https://res.cloudinary.com/dynbpb9u0/image/upload/v1780658798/WhatsApp_Image_2026-06-05_at_15.18.14_fcfee9.jpg',
     label: 'Shiva Shakthi Jyothisha Madom — Photo 2',
   },
+  {
+    type: 'image',
+    src: 'https://res.cloudinary.com/dynbpb9u0/image/upload/v1780743620/WhatsApp_Image_2026-06-06_at_15.51.05_y5uuww.jpg',
+    label: 'Shiva Shakthi Jyothisha Madom — Photo 3',
+  },
+  {
+    type: 'video',
+    src: 'https://res.cloudinary.com/dynbpb9u0/video/upload/v1780743607/WhatsApp_Video_2026-06-06_at_15.58.05_lv4uhf.mp4',
+    label: 'Shiva Shakthi Jyothisha Madom — Video 3',
+  },
+  {
+    type: 'video',
+    src: 'https://res.cloudinary.com/dynbpb9u0/video/upload/v1780743595/WhatsApp_Video_2026-06-06_at_15.55.09_mcpdfg.mp4',
+    label: 'Shiva Shakthi Jyothisha Madom — Video 4',
+  },
+  {
+    type: 'video',
+    src: 'https://res.cloudinary.com/dynbpb9u0/video/upload/v1780743595/WhatsApp_Video_2026-06-06_at_15.50.31_vdrcj8.mp4',
+    label: 'Shiva Shakthi Jyothisha Madom — Video 5',
+  },
 ];
 
+// Split items into N columns in round-robin order
+function splitColumns(items, cols) {
+  const columns = Array.from({ length: cols }, () => []);
+  items.forEach((item, i) => columns[i % cols].push(item));
+  return columns;
+}
+
 function VideoCard({ src, label }) {
-  const ref = useRef(null);
+  const containerRef = useRef(null);
+  const videoRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true });
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(true);
 
   const togglePlay = () => {
-    const v = ref.current;
+    const v = videoRef.current;
     if (!v) return;
     if (v.paused) { v.play(); setPlaying(true); }
     else { v.pause(); setPlaying(false); }
   };
 
   const toggleMute = () => {
-    const v = ref.current;
+    const v = videoRef.current;
     if (!v) return;
     v.muted = !v.muted;
     setMuted(v.muted);
   };
 
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-gold/25 bg-cosmic-950/70 shadow-glow">
+    <motion.div
+      ref={containerRef}
+      initial={{ opacity: 0, y: 32 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      className="group relative overflow-hidden rounded-2xl border border-gold/25 bg-cosmic-950/70 shadow-glow"
+    >
       <video
-        ref={ref}
+        ref={videoRef}
         src={src}
         aria-label={label}
         muted
         loop
         playsInline
         preload="metadata"
-        className="w-full h-auto object-contain"
+        className="w-full h-auto object-contain block"
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
         onVolumeChange={(e) => setMuted(e.currentTarget.muted)}
@@ -66,7 +101,7 @@ function VideoCard({ src, label }) {
           type="button"
           onClick={togglePlay}
           aria-label={playing ? 'Pause' : 'Play'}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-cosmic-950/80 text-ivory backdrop-blur-md transition hover:border-gold/60 hover:text-gold"
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-cosmic-950/80 text-ivory backdrop-blur-md transition hover:border-gold/60 hover:text-gold"
         >
           {playing ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
         </button>
@@ -74,38 +109,45 @@ function VideoCard({ src, label }) {
           type="button"
           onClick={toggleMute}
           aria-label={muted ? 'Unmute' : 'Mute'}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-cosmic-950/80 text-ivory backdrop-blur-md transition hover:border-gold/60 hover:text-gold"
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-cosmic-950/80 text-ivory backdrop-blur-md transition hover:border-gold/60 hover:text-gold"
         >
           {muted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 function ImageCard({ src, label }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const [loaded, setLoaded] = useState(false);
+
   return (
-    <div className="overflow-hidden rounded-2xl border border-gold/25 bg-cosmic-950/70 shadow-glow">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 32 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      className="overflow-hidden rounded-2xl border border-gold/25 bg-cosmic-950/70 shadow-glow"
+    >
       <img
         src={src}
         alt={label}
-        className="w-full h-auto object-contain transition duration-500 hover:scale-105"
         loading="lazy"
+        onLoad={() => setLoaded(true)}
+        className={`w-full h-auto object-contain block transition-all duration-700 ease-in-out hover:scale-105 ${
+          loaded ? 'opacity-100' : 'opacity-0'
+        }`}
       />
-    </div>
+    </motion.div>
   );
 }
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
-};
-const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
-};
-
 export default function Gallery() {
+  const cols2 = splitColumns(mediaItems, 2);
+  const cols3 = splitColumns(mediaItems, 3);
+
   return (
     <section id="gallery" className="relative overflow-hidden py-24 lg:py-32">
       <SacredBackdrop variant="alt" stars={30} />
@@ -122,7 +164,7 @@ export default function Gallery() {
           className="mb-14 text-center"
         >
           <p className="mb-3 font-sanskrit text-xs uppercase tracking-[0.35em] text-gold/70">
-            U Media's
+            Our Media
           </p>
           <h2 className="font-display text-4xl font-semibold text-ivory sm:text-5xl">
             Shiva Shakthi
@@ -136,24 +178,35 @@ export default function Gallery() {
           </p>
         </motion.div>
 
-        {/* Grid */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-60px' }}
-          className="grid gap-6 sm:grid-cols-2"
-        >
-          {mediaItems.map((item) => (
-            <motion.div key={item.src} variants={fadeUp}>
-              {item.type === 'video' ? (
-                <VideoCard src={item.src} label={item.label} />
-              ) : (
-                <ImageCard src={item.src} label={item.label} />
+        {/* 2-col layout on sm, hidden on lg */}
+        <div className="grid grid-cols-2 gap-5 sm:gap-6 lg:hidden">
+          {cols2.map((col, ci) => (
+            <div key={ci} className="flex flex-col gap-5 sm:gap-6">
+              {col.map((item) =>
+                item.type === 'video' ? (
+                  <VideoCard key={item.src} src={item.src} label={item.label} />
+                ) : (
+                  <ImageCard key={item.src} src={item.src} label={item.label} />
+                )
               )}
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
+
+        {/* 3-col layout on lg+ */}
+        <div className="hidden lg:grid lg:grid-cols-3 lg:gap-6">
+          {cols3.map((col, ci) => (
+            <div key={ci} className="flex flex-col gap-6">
+              {col.map((item) =>
+                item.type === 'video' ? (
+                  <VideoCard key={item.src} src={item.src} label={item.label} />
+                ) : (
+                  <ImageCard key={item.src} src={item.src} label={item.label} />
+                )
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
